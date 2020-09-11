@@ -1,0 +1,57 @@
+﻿@page
+@model ION_Aplicacion.Pages.Proveedores.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<link rel="stylesheet" href="~/css/styles.css" />
+<h1>Proveedores</h1>
+
+<p>
+    <div class="margen">
+        <a class="boton_personalizado" asp-page="Create">Create New</a>
+    </div>
+    
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Proveedor[0].RFC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proveedor[0].Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proveedor[0].Direccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proveedor[0].Telefono)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Proveedor) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RFC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

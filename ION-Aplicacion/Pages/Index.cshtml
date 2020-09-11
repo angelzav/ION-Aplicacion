@@ -1,0 +1,16 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<link rel="stylesheet" href="~/css/styles.css" />
+<div class="text-center">
+    <h1 class="display-4">ION Aplicación</h1>
+    <div class="margin">
+        <div class="margin"><a class="boton_cuadrado" asp-page="/Clientes/Index">Clientes</a></div>
+        <div class="margin"><a class="boton_cuadrado" asp-page="/Proveedores/Index">Proveedor</a></div>
+        <div class="margin"><a class="boton_cuadrado" asp-page="/Productos/Index">Productos</a></div>
+        <div class="margin"><a class="boton_cuadrado" asp-page="/Ventas/Index">Ventas</a></div>
+    </div> 
+</div>
